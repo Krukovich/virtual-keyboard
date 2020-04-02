@@ -1,0 +1,13 @@
+.main-block {
+    width: 800px;
+
+    .keyboard-display {
+        height: 200px;
+        width: 740px;
+        resize: none;
+        outline: none;
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4), inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+    }
+}
