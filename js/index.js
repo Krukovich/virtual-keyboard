@@ -34,6 +34,7 @@ window.onload = () => {
     const display = document.getElementById('keyBoardDisplay');
     let flag = true;
     if (event.target.type === 'submit') {
+      if (event.target.name === '8') flag = helper.deleteChar(display);
       if (event.target.name === '37'
         || event.target.name === '38'
         || event.target.name === '39'

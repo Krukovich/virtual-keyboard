@@ -21,6 +21,16 @@ class Helper {
     return result;
   }
 
+  deleteChar(box) {
+    const display = box;
+    const str = display.value;
+    if (str) {
+      display.value = str.substring(0, str.length - 1);
+      return false;
+    }
+    return true;
+  }
+
   insertSymbol(name, div) {
     const display = div;
     if (display.value === '') {
