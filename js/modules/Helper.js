@@ -28,7 +28,7 @@ class Helper {
       display.value = str.substring(0, str.length - 1);
       return false;
     }
-    return true;
+    return false;
   }
 
   insertSymbol(name, div) {
