@@ -21,8 +21,14 @@ class Helper {
     return result;
   }
 
-  deleteChar(box) {
-    const display = box;
+  newLine(div) {
+    const display = div;
+    display.value += '\r\n';
+    return false;
+  }
+
+  deleteChar(div) {
+    const display = div;
     const str = display.value;
     if (str) {
       display.value = str.substring(0, str.length - 1);
