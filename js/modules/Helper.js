@@ -56,6 +56,7 @@ class Helper {
 
   insertCharInDisplay(name, div) {
     const display = div;
+    if (this.filterKeyCode(name)) return;
     if (display.value === '') {
       const prepareArray = [];
       prepareArray.push(this.insertAgreeValue(name));
@@ -65,12 +66,22 @@ class Helper {
     }
   }
 
+  filterKeyCode(name) {
+    const keyCodeData = [20, 16, 17, 91, 18, 32, 93];
+    if (keyCodeData.includes(Number(name))) return true;
+    return false;
+  }
+
   buttonPressAnimation(code) {
-    document.getElementById(String(code)).classList.add('key_active');
+    if (code) {
+      document.getElementById(String(code)).classList.add('key_active');
+    }
   }
 
   removePressAnimation(code) {
-    document.getElementById(String(code)).classList.remove('key_active');
+    if (code && document.getElementById(String(code)).classList.contains('key_active')) {
+      document.getElementById(String(code)).classList.remove('key_active');
+    }
   }
 
   pushDataInLocalStorage(lang) {
