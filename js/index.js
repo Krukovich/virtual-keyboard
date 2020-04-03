@@ -42,6 +42,10 @@ window.onload = () => {
         flag = helper.newLine(display);
         display.focus();
       }
+      if (event.target.name === '9') {
+        flag = helper.insertSpace(display);
+        display.focus();
+      }
       if (event.target.name === '37'
         || event.target.name === '38'
         || event.target.name === '39'

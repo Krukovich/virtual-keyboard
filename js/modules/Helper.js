@@ -21,6 +21,12 @@ class Helper {
     return result;
   }
 
+  insertSpace(div) {
+    const display = div;
+    display.value += '    ';
+    return false;
+  }
+
   newLine(div) {
     const display = div;
     display.value += '\r\n';
