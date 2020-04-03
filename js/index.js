@@ -52,4 +52,6 @@ window.onload = () => {
   document.addEventListener('keyup', (event) => {
     helper.removePressAnimation(event.code);
   });
+
+  helper.showMessage();
 };

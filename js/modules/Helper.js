@@ -50,6 +50,13 @@ class Helper {
   loadDataFromLocalStorage() {
     return JSON.parse(localStorage.getItem('lang'));
   }
+
+  showMessage() {
+    const message = document.createElement('div');
+    message.classList.add('message');
+    message.innerText = 'Hi guys, this keyboard is implemented for windows if you want to change the language, please press LeftAlt + LeftShift.';
+    document.body.append(message);
+  }
 }
 
 export default Helper;
