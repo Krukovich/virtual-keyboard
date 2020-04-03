@@ -21,6 +21,17 @@ class Helper {
     return result;
   }
 
+  insertSymbol(name, div) {
+    const display = div;
+    if (display.value === '') {
+      const prepareArray = [];
+      prepareArray.push(name);
+      display.value = prepareArray.join();
+    } else {
+      display.value = `${display.value}${name}`;
+    }
+  }
+
   insertCharInDisplay(name, div) {
     const display = div;
     if (display.value === '') {

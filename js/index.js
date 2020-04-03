@@ -32,9 +32,20 @@ window.onload = () => {
 
   document.addEventListener('click', (event) => {
     const display = document.getElementById('keyBoardDisplay');
+    let flag = true;
     if (event.target.type === 'submit') {
-      helper.insertCharInDisplay(event.target.name, display);
-      display.focus();
+      if (event.target.name === '37'
+        || event.target.name === '38'
+        || event.target.name === '39'
+        || event.target.name === '40') {
+        helper.insertSymbol(event.target.innerHTML, display);
+        display.focus();
+        flag = false;
+      }
+      if (flag) {
+        helper.insertCharInDisplay(event.target.name, display);
+        display.focus();
+      }
     }
   });
 
