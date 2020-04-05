@@ -2,11 +2,10 @@
 
 import { keysDataEn, keysDataRu } from './data.js';
 import Keyboard from './modules/Keyboard.js';
-import Helper from './modules/Helper.js';
+import * as helper from './modules/helper.js';
 
 window.onload = () => {
   const keyboard = new Keyboard();
-  const helper = new Helper();
 
   keyboard.createKeyboard();
 
@@ -76,5 +75,7 @@ window.onload = () => {
     helper.removePressAnimation(event.code);
   });
 
-  helper.showMessage();
+  const str = 'Hi guys, this keyboard is implemented for windows if you want to change the language, please press LeftAlt + LeftShift.';
+
+  helper.showMessage(str, 'div');
 };
