@@ -1,9 +1,9 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable import/extensions */
-import Helper from './Helper.js';
+import * as helper from './helper.js';
 
 class Keyboard {
   constructor() {
-    this.helper = new Helper();
     this.lang = 'en';
   }
 
@@ -36,7 +36,7 @@ class Keyboard {
     array.forEach((key) => {
       const btn = document.createElement('button');
       const div = document.getElementById('keyBoardKeys');
-      btn.innerHTML = this.helper.insertAgreeValue(key);
+      btn.innerHTML = helper.insertAgreeValue(key);
       btn.style.width = `${key.size}px`;
       btn.setAttribute('name', `${key.keyCode}`);
       btn.setAttribute('id', `${key.code}`);
