@@ -2,7 +2,7 @@
 
 import { keysDataEn, keysDataRu } from './data.js';
 import Keyboard from './modules/Keyboard.js';
-import * as helper from './modules/_helper.js';
+import * as helper from './modules/helper.js';
 
 window.onload = () => {
   const keyboard = new Keyboard();

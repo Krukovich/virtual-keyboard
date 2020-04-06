@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable import/extensions */
-import * as helper from './_helper.js';
+import * as helper from './helper.js';
 
 class Keyboard {
   constructor() {
