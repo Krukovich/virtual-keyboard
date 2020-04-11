@@ -72,14 +72,14 @@ export function filterKeyCode(name) {
 }
 
 export function buttonPressAnimation(code) {
-  if (code) {
-    document.getElementById(String(code)).classList.add('key_active');
+  if (code && document.getElementById(code)) {
+    document.getElementById(code).classList.add('key_active');
   }
 }
 
 export function removePressAnimation(code) {
-  if (code && document.getElementById(String(code)).classList.contains('key_active')) {
-    document.getElementById(String(code)).classList.remove('key_active');
+  if (code && document.getElementById(code) && document.getElementById(code).classList.contains('key_active')) {
+    document.getElementById(code).classList.remove('key_active');
   }
 }
 
