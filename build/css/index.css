@@ -1,0 +1,96 @@
+article,
+aside,
+body,
+caption,
+div,
+figure,
+footer,
+h1,
+h2,
+h3,
+header,
+hgroup,
+html,
+nav,
+p,
+pre,
+section,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.key {
+  font: bold 12px arial;
+  margin: 2px auto;
+  height: 50px;
+  outline: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f1ee), to(#fff));
+  background-image: linear-gradient(top, #f4f1ee, #fff);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3), inset 0 4px 1px 1px white, inset 0 -3px 1px 1px rgba(204, 198, 197, 0.5);
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  text-decoration: none;
+  text-align: center;
+  color: #83D244;
+  padding: 9px 0 0 15px;
+}
+.key:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f4f1ee));
+  background-image: linear-gradient(top, #fff, #f4f1ee);
+  color: #dbd2d2;
+  cursor: pointer;
+}
+.key:active {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#efedec), to(#f7f4f4));
+  background-image: linear-gradient(top, #efedec, #f7f4f4);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4), inset 0 -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+.key:active:hover {
+  color: #dbd2d2;
+  text-shadow: 0 -1px 1px #bdb5b4, 0 1px 1px white;
+}
+.key_active {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#efedec), to(#f7f4f4));
+  background-image: linear-gradient(top, #efedec, #f7f4f4);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7), inset 0 -3px 1px 1px rgba(204, 198, 197, 0.8);
+}
+
+.main-block {
+  width: 800px;
+}
+.main-block .keyboard-display {
+  height: 200px;
+  width: 740px;
+  resize: none;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4), inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+
+.message {
+  padding: 1rem;
+  position: fixed;
+  color: #fff;
+  text-align: justify;
+  width: 250px;
+  bottom: 100px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,21 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass scss/index.scss build/css/index.css",
+    "watch": "sass --watch scss/index.scss build/css/index.css"
+  },
+  "author": "Krukovich",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "sass": "^1.26.2"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^18.1.0"
+  }
+}

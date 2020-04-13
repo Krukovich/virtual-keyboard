@@ -1,0 +1,39 @@
+.key {
+  font: bold 12px arial;
+  margin: 2px auto;
+  height: 50px;
+  outline: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f1ee), to(#fff));
+  background-image: linear-gradient(top, #f4f1ee, #fff);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3), inset 0 4px 1px 1px white, inset 0 -3px 1px 1px rgba(204, 198, 197, 0.5);
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  text-decoration: none;
+  text-align: center;
+  color: $main_color;
+  padding: 9px 0 0 15px;
+
+  &:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f4f1ee));
+    background-image: linear-gradient(top, #fff, #f4f1ee);
+    color: $hover_color;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#efedec), to(#f7f4f4));
+    background-image: linear-gradient(top, #efedec, #f7f4f4);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4), inset 0 -3px 1px 1px rgba(204, 198, 197, 0.5);
+  }
+
+  &:active:hover {
+    color: $hover_color;
+    text-shadow: 0 -1px 1px #bdb5b4, 0 1px 1px white;
+  }
+
+  &_active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#efedec), to(#f7f4f4));
+    background-image: linear-gradient(top, #efedec, #f7f4f4);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7), inset 0 -3px 1px 1px rgba(204, 198, 197, 0.8);
+  }
+}
