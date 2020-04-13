@@ -30,10 +30,10 @@
     color: $hover_color;
     text-shadow: 0 -1px 1px #bdb5b4, 0 1px 1px white;
   }
-}
 
-.key_active {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#efedec), to(#f7f4f4)) !important;
-  background-image: linear-gradient(top, #efedec, #f7f4f4) !important;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7), inset 0 -3px 1px 1px rgba(204, 198, 197, 0.8) !important;
+  &_active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#efedec), to(#f7f4f4));
+    background-image: linear-gradient(top, #efedec, #f7f4f4);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7), inset 0 -3px 1px 1px rgba(204, 198, 197, 0.8);
+  }
 }

@@ -37,7 +37,6 @@ export function deleteChar(div) {
   const str = display.value;
   if (str) {
     display.value = str.substring(0, str.length - 1);
-    return false;
   }
   return false;
 }
@@ -86,8 +85,8 @@ export function removePressAnimation(code) {
 export function pushDataInLocalStorage(lang) {
   const tempObj = {};
   tempObj.lang = lang;
-  const obj = JSON.stringify(tempObj);
-  localStorage.setItem('lang', obj);
+  const languageSettings = JSON.stringify(tempObj);
+  localStorage.setItem('lang', languageSettings);
 }
 
 export function loadDataFromLocalStorage() {

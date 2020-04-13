@@ -21,39 +21,46 @@ window.onload = () => {
     }
   };
 
-  const value = helper.loadDataFromLocalStorage();
-  if (value) {
-    insertCurrentLanguage(value);
+  const lang = helper.loadDataFromLocalStorage();
+  if (lang) {
+    insertCurrentLanguage(lang);
   } else {
     keyboard.paintKeyboard(keysDataEn);
     helper.pushDataInLocalStorage(keyboard.lang = 'en');
   }
 
   document.addEventListener('click', (event) => {
+    const arrows = {
+      left: '37',
+      up: '38',
+      right: '39',
+      down: '40',
+    };
+
     const display = document.getElementById('keyBoardDisplay');
-    let flag = true;
+    let isPrintable = true;
     if (event.target.type === 'submit') {
-      if (event.target.name === '8') {
-        flag = helper.deleteChar(display);
+      if (event.target.innerText === 'Backspace') {
+        isPrintable = helper.deleteChar(display);
         display.focus();
       }
-      if (event.target.name === '13') {
-        flag = helper.newLine(display);
+      if (event.target.innerText === 'Enter') {
+        isPrintable = helper.newLine(display);
         display.focus();
       }
-      if (event.target.name === '9') {
-        flag = helper.insertSpace(display);
+      if (event.target.innerText === 'Tab') {
+        isPrintable = helper.insertSpace(display);
         display.focus();
       }
-      if (event.target.name === '37'
-        || event.target.name === '38'
-        || event.target.name === '39'
-        || event.target.name === '40') {
+      if (event.target.name === arrows.left
+        || event.target.name === arrows.up
+        || event.target.name === arrows.right
+        || event.target.name === arrows.down) {
         helper.insertSymbol(event.target.innerHTML, display);
         display.focus();
-        flag = false;
+        isPrintable = false;
       }
-      if (flag) {
+      if (isPrintable) {
         helper.insertCharInDisplay(event.target.name, display);
         display.focus();
       }
@@ -61,12 +68,17 @@ window.onload = () => {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.altKey && event.shiftKey && keyboard.lang === 'en') {
+    const kbdLang = {
+      en: 'en',
+      ru: 'ru',
+    };
+
+    if (event.altKey && event.shiftKey && keyboard.lang === kbdLang.en) {
       keyboard.paintKeyboard(keysDataRu);
-      helper.pushDataInLocalStorage(keyboard.lang = 'ru');
-    } else if (event.altKey && event.shiftKey && keyboard.lang === 'ru') {
+      helper.pushDataInLocalStorage(keyboard.lang = kbdLang.ru);
+    } else if (event.altKey && event.shiftKey && keyboard.lang === kbdLang.ru) {
       keyboard.paintKeyboard(keysDataEn);
-      helper.pushDataInLocalStorage(keyboard.lang = 'en');
+      helper.pushDataInLocalStorage(keyboard.lang = kbdLang.en);
     }
     if (event.code) helper.buttonPressAnimation(event.code);
   });
@@ -75,7 +87,7 @@ window.onload = () => {
     helper.removePressAnimation(event.code);
   });
 
-  const str = 'Hi guys, this keyboard is implemented for windows if you want to change the language, please press LeftAlt + LeftShift.';
+  const hint = 'Hi guys, this keyboard is implemented for windows if you want to change the language, please press LeftAlt + LeftShift.';
 
-  helper.showMessage(str, 'div');
+  helper.showMessage(hint, 'div');
 };
