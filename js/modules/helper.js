@@ -37,7 +37,6 @@ export function deleteChar(div) {
   const str = display.value;
   if (str) {
     display.value = str.substring(0, str.length - 1);
-    return false;
   }
   return false;
 }
@@ -72,22 +71,22 @@ export function filterKeyCode(name) {
 }
 
 export function buttonPressAnimation(code) {
-  if (code) {
-    document.getElementById(String(code)).classList.add('key_active');
+  if (code && document.getElementById(code)) {
+    document.getElementById(code).classList.add('key_active');
   }
 }
 
 export function removePressAnimation(code) {
-  if (code && document.getElementById(String(code)).classList.contains('key_active')) {
-    document.getElementById(String(code)).classList.remove('key_active');
+  if (code && document.getElementById(code) && document.getElementById(code).classList.contains('key_active')) {
+    document.getElementById(code).classList.remove('key_active');
   }
 }
 
 export function pushDataInLocalStorage(lang) {
   const tempObj = {};
   tempObj.lang = lang;
-  const obj = JSON.stringify(tempObj);
-  localStorage.setItem('lang', obj);
+  const languageSettings = JSON.stringify(tempObj);
+  localStorage.setItem('lang', languageSettings);
 }
 
 export function loadDataFromLocalStorage() {
